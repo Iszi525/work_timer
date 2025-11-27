@@ -1,0 +1,23 @@
+name: work_timer
+description: A simple app that notifies you 8.5 hours after starting work.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_local_notifications: ^18.0.1
+  timezone: ^0.9.4
+  shared_preferences: ^2.3.3
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
