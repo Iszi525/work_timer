@@ -7,12 +7,13 @@ plugins {
 
 android {
     namespace = "com.yourname.work_timer"
-    compileSdk = 34  // Required for notifications and exact alarms
+    compileSdk = 36  // Required for shared_preferences and notifications
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+        isCoreLibraryDesugaringEnabled = true  // Required for flutter_local_notifications
     }
 
     kotlinOptions {
@@ -25,7 +26,7 @@ android {
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = 21  // Required for flutter_local_notifications
-        targetSdk = 34  // Required for notifications and exact alarms
+        targetSdk = 36  // Required for notifications and exact alarms
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
@@ -41,4 +42,8 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
 }
